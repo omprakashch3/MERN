@@ -5,6 +5,13 @@ const connectDB = require("./config/db");
 //connect database
 connectDB();
 
+//init middleware
+app.use(
+  express.json({
+    extended: false,
+  })
+);
+
 const port = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
